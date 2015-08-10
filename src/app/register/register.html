@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="page-header">
+    <h1>Register</h1>
+  </div>
+
+  <div class="col-sm-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Welcome to Noterious</h3>
+      </div>
+      <div class="panel-body">
+        <form
+          role="form"
+          name="register.registerForm"
+          ng-submit="register.signUp(register.user, register.registerForm.$valid)">
+
+          <div class="alert alert-danger" ng-if="register.error" role="alert">
+            <p>{{register.error}}</p>
+          </div>
+
+          <div class="input-group input-group-lg">
+            <span class="input-group-addon" id="sizing-addon1"><span class="glyphicon glyphicon-user"></span></span>
+            <input type="email" class="form-control" placeholder="Email" aria-describedby="sizing-addon1" ng-model="register.user.email" required>
+          </div>
+          <br/>
+          <div class="input-group input-group-lg">
+            <span class="input-group-addon" id="sizing-addon1"><span class="glyphicon glyphicon-user"></span></span>
+            <input type="text" class="form-control" placeholder="Username" aria-describedby="sizing-addon1" ng-model="register.user.username" required>
+          </div>
+          <br/>
+          <div class="input-group input-group-lg">
+            <span class="input-group-addon" id="sizing-addon1"><span class="glyphicon glyphicon-link"></span></span>
+            <input type="password" class="form-control" placeholder="Password" aria-describedby="sizing-addon1" ng-model="register.user.password">
+          </div>
+
+          <div class="row">
+            <div class="col-sm-6">
+              <br/>
+              <button type="submit" class="btn btn-default btn-lg" ng-disabled="register.loading.register">
+                <span ng-hide="register.loading">Register</span>
+                <span ng-show="register.loading" class="glyphicon glyphicon-refresh"></span></button>
+            </div>
+
+          </div>
+
+        </form>
+
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+
+
